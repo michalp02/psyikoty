@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="kot1.jpg" alt="kot1">
+    <img src="pies1.jpg" alt="pies1">
+    <img src="pies2.jpg" alt="pies2">
+    <img src="pies3.jpg" alt="pies3">
+    <script>
+        var images = document.getElementsByTagName("img");
+        for(let i=0;i<images.length;i++) {
+            images[i].addEventListener("mouseover", (event)=>{
+                event.target.setAttribute("src", event.target.getAttribute("alt")+"-szary.jpg");
+            });
+            images[i].addEventListener("mouseout", (event)=>{
+                event.target.setAttribute("src", event.target.getAttribute("alt")+".jpg");
+            });
+            images[i].addEventListener("click", (event)=>{
+                event.target.setAttribute("src", event.target.getAttribute("alt")+".jpg");
+            });
+        }
+        /*
+        
+        Wykonane obrazy w Photoshopie, w skrypcie nie ma wyświetlania zdjęcia w prawym dolnym rogu, ponieważ wymaga to stworzenia takowego elementu w html-u. W każdym razie można to zrobić w nastepujący sposób:
+
+        document.getElementById("zdjeciewrogu").src = event.target.getAttribute("alt")+".jpg";
+        
+        */
+    </script>
+</body>
+</html>
